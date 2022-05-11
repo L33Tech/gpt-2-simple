@@ -554,11 +554,11 @@ def generate_to_file(sess,
              include_prefix=include_prefix)
 
 
-def mount_gdrive():
+def mount_gdrive(force_remount=False):
     """Mounts the user's Google Drive in Colaboratory."""
     assert 'google.colab' in sys.modules, "You must be in Colaboratory to mount your Google Drive"
 
-    drive.mount('/content/drive')
+    drive.mount('/content/drive', force_remount=force_remount)
 
 
 def is_mounted():
